@@ -1,3 +1,7 @@
+.taskInput {
+   width: 100%;
+}
+
 .taskForm {
    width: 100%;
    height: 3.375rem;
@@ -11,7 +15,7 @@
 }
 
 .taskForm textarea {
-   width: 38rem;
+   width: calc(100% - 0.5rem - 5.625rem);
    height: 100%;
    background: var(--gray-500);
    border: 1px solid var(--gray-800);

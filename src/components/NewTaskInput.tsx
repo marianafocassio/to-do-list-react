@@ -12,7 +12,7 @@ export function NewTaskInput() {
    const isNewTaskEmpty = 0;
    
    return (
-      <div>
+      <div className={styles.taskInput}>
          <form onSubmit={handleCreateNewTask} className={styles.taskForm}>
 
             <textarea
