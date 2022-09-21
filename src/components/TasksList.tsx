@@ -1,3 +1,5 @@
+import { Task } from './Task'
+
 import styles from './TasksList.module.css'
 
 import clipboard from '../assets/clipboard.svg'
@@ -10,9 +12,10 @@ export function TasksList() {
             <p className={styles.completedTasks}>Concluídas <span>0</span></p>
          </div>
          <div className={styles.tasksContainer}>
-            <img src={clipboard} alt="" />
+            {/* <img src={clipboard} alt="" />
             <p><span>Você ainda não tem tarefas cadastradas</span></p>
-            <p>Crie tarefas e organize seus itens a fazer</p>
+            <p>Crie tarefas e organize seus itens a fazer</p> */}
+            <Task />
          </div>
       </div>
    )

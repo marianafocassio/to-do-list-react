@@ -43,7 +43,7 @@
    width: 100%;
    border-top: 1px solid var(--gray-400);
    border-radius: 8px;
-   padding: 4rem 1.5rem;
+   /*padding: 4rem 1.5rem;*/
 
    display: flex;
    flex-direction: column;
