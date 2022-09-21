@@ -1,8 +1,28 @@
+import { v4 as uuidv4 } from 'uuid'
+
 import { Task } from './Task'
+
+import clipboard from '../assets/clipboard.svg'
 
 import styles from './TasksList.module.css'
 
-import clipboard from '../assets/clipboard.svg'
+const tasks = [
+   {
+     id: uuidv4(),
+     title: 'Terminar o desafio',
+     isComplete: false,
+   },
+   {
+      id: uuidv4(),
+      title: 'Terminar o curso de React',
+      isComplete: false,
+    },
+    {
+      id: uuidv4(),
+      title: 'Almoçar',
+      isComplete: true,
+    },
+ ]
 
 export function TasksList() {
    return (
@@ -12,9 +32,13 @@ export function TasksList() {
             <p className={styles.completedTasks}>Concluídas <span>0</span></p>
          </div>
          <div className={styles.tasksContainer}>
+            {/* {tasks.map(task => {
+               return
+            })} */}
             {/* <img src={clipboard} alt="" />
             <p><span>Você ainda não tem tarefas cadastradas</span></p>
             <p>Crie tarefas e organize seus itens a fazer</p> */}
+            <Task />
             <Task />
          </div>
       </div>
