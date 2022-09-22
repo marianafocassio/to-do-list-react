@@ -51,9 +51,9 @@
    justify-content: center;
 }
 
-.tasksContainer img {
+/* .tasksContainer img {
    margin-bottom: 1rem;
-}
+} */
 .tasksContainer p span {
    font-weight: bold;
 }
