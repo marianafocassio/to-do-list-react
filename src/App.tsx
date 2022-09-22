@@ -1,10 +1,12 @@
 import { Header } from './components/Header'
 import { NewTaskInput } from './components/NewTaskInput'
+import { TasksList } from './components/TasksList'
+
+import { useState } from 'react'
 
 import styles from '../src/App.module.css'
 
 import './global.css'
-import { TasksList } from './components/TasksList'
 
 export function App() {
 
@@ -15,7 +17,7 @@ export function App() {
       <main className={styles.mainContainer}>
         <NewTaskInput />
       
-        <TasksList />
+        <TasksList/>
       </main>
     </div>
   )

@@ -4,12 +4,13 @@ import styles from './NewTaskInput.module.css'
 
 import addIcon from '../assets/add-icon.svg'
 
+
 export function NewTaskInput() {
    function handleCreateNewTask (event: FormEvent) {
+      event.preventDefault()
 
+      
    }
-
-   const isNewTaskEmpty = 0;
    
    return (
       <div className={styles.taskInput}>
@@ -24,11 +25,9 @@ export function NewTaskInput() {
                required
             />
 
-            <button type='submit' 
-            // disabled={isNewTaskEmpty}
-            >
-                  Criar
-                  <img src={addIcon} alt="" />
+            <button type='submit'>
+               Criar
+               <img src={addIcon} alt="" />
             </button>
          </form>
 
