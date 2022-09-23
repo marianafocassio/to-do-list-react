@@ -48,7 +48,7 @@ export function TasksList() {
                      key = {task.id}
                      title = {task.title}
                      isIncomplete = {task.isIncomplete}
-                  />
+                  /> 
                )
             })}
          </div>
