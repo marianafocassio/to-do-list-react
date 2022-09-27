@@ -54,6 +54,9 @@ export function TasksList() {
 
       //Recebe as tasks antigas e insere uma nova
       setTasks([...tasks, newTask]);
+
+      //Deixa input vazio novamente
+      setNewTaskTitle('');
    }
 
    return (
@@ -64,7 +67,9 @@ export function TasksList() {
                   name="task"
                   placeholder="Adicione uma nova tarefa"
                   required
+                  value={newTaskTitle}
                   onChange={(e) => setNewTaskTitle(e.target.value)}
+                  //onInvalid={}
                />
                <button type="submit" onClick={handleCreateNewTask}>
                   Criar
