@@ -68,6 +68,19 @@ export function TasksList() {
       setTasks(tasksWithoutDeletedOne);
    }
 
+   //Mudar status da tarefa
+   function changeStatusTask(id: string) {
+      const newTasks = tasks.map((task) => {
+         if (task.id == id) {
+            task.isIncomplete = !task.isIncomplete
+         }
+         
+         return task;
+      });
+
+      setTasks(newTasks);
+   }
+
    return (
       <>
          <div className={stylesInput.taskInput}>
@@ -104,6 +117,7 @@ export function TasksList() {
                         title = {task.title}
                         isIncomplete = {task.isIncomplete}
                         onDeleteTask = {deleteTask}
+                        changeStatusTask = {changeStatusTask}
                      /> 
                   )
                })}
