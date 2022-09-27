@@ -41,17 +41,19 @@ export function TasksList() {
        },
    ]);
 
+   //Iniciar input vazio
+   const [newTaskTitle, setNewTaskTitle] = useState('');
+
    //Cria nova task na taskList
    function handleCreateNewTask() {
       const newTask = {
          id: uuidv4(),
-         title: 'alou',
+         title: newTaskTitle,
          isIncomplete: true,
       }
 
       //Recebe as tasks antigas e insere uma nova
       setTasks([...tasks, newTask]);
-
    }
 
    return (
@@ -62,6 +64,7 @@ export function TasksList() {
                   name="task"
                   placeholder="Adicione uma nova tarefa"
                   required
+                  onChange={(e) => setNewTaskTitle(e.target.value)}
                />
                <button type="submit" onClick={handleCreateNewTask}>
                   Criar
