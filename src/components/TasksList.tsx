@@ -59,6 +59,15 @@ export function TasksList() {
       setNewTaskTitle('');
    }
 
+   //Deletar tarefa
+   function deleteTask(taskToDelete: string) {
+      const tasksWithoutDeletedOne = tasks.filter((task) => {
+         return task.id !== taskToDelete;
+      });
+
+      setTasks(tasksWithoutDeletedOne);
+   }
+
    return (
       <>
          <div className={stylesInput.taskInput}>
@@ -94,6 +103,7 @@ export function TasksList() {
                         id = {task.id}
                         title = {task.title}
                         isIncomplete = {task.isIncomplete}
+                        onDeleteTask = {deleteTask}
                      /> 
                   )
                })}
