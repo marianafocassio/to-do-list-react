@@ -39,45 +39,58 @@ export function TasksList() {
          title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, fugiat ab a nemo aliquam incidunt corrupti omnis impedit officia sit fuga at quisquam ex illum sequi atque maxime repellendus quod!',
          isIncomplete: false,
        },
-    ]);
+   ]);
+
+   //Cria nova task na taskList
+   function handleCreateNewTask() {
+      const newTask = {
+         id: uuidv4(),
+         title: 'alou',
+         isIncomplete: true,
+      }
+
+      //Recebe as tasks antigas e insere uma nova
+      setTasks([...tasks, newTask]);
+
+   }
 
    return (
       <>
          <div className={stylesInput.taskInput}>
-        <div className={stylesInput.taskForm}>
-          <textarea
-            name="task"
-            placeholder="Adicione uma nova tarefa"
-            required
-          />
-          <button type="submit">
-            Criar
-            <img src={addIcon} alt="" />
-          </button>
-        </div>
-      </div>
+            <div className={stylesInput.taskForm}>
+               <textarea
+                  name="task"
+                  placeholder="Adicione uma nova tarefa"
+                  required
+               />
+               <button type="submit" onClick={handleCreateNewTask}>
+                  Criar
+                  <img src={addIcon} alt="" />
+               </button>
+            </div>
+         </div>
       
          <div className={styles.tasksList}>
-         <div className={styles.infosContainer}>
-            <p className={styles.createdTasks}>Tarefas criadas <span>0</span></p>
-            <p className={styles.completedTasks}>Concluídas <span>0</span></p>
+            <div className={styles.infosContainer}>
+               <p className={styles.createdTasks}>Tarefas criadas <span>0</span></p>
+               <p className={styles.completedTasks}>Concluídas <span>0</span></p>
+            </div>
+            <div className={styles.tasksContainer}>
+               {/* <img src={clipboard} alt="" />
+               <p><span>Você ainda não tem tarefas cadastradas</span></p>
+               <p>Crie tarefas e organize seus itens a fazer</p> */}
+               {tasks.map(task => {
+                  return (
+                     <Task
+                        key = {task.id}
+                        id = {task.id}
+                        title = {task.title}
+                        isIncomplete = {task.isIncomplete}
+                     /> 
+                  )
+               })}
+            </div>
          </div>
-         <div className={styles.tasksContainer}>
-            {/* <img src={clipboard} alt="" />
-            <p><span>Você ainda não tem tarefas cadastradas</span></p>
-            <p>Crie tarefas e organize seus itens a fazer</p> */}
-            {tasks.map(task => {
-               return (
-                  <Task
-                     key = {task.id}
-                     id = {task.id}
-                     title = {task.title}
-                     isIncomplete = {task.isIncomplete}
-                  /> 
-               )
-            })}
-         </div>
-      </div>
       </>
    )
 }
