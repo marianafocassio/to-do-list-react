@@ -1,6 +1,6 @@
-import styles from './Header.module.css'
+import styles from './Header.module.css';
 
-import rocketLogo from '../assets/rocket-logo.svg'
+import rocketLogo from '../assets/rocket-logo.svg';
 
 export function Header() {
    return (
@@ -9,5 +9,5 @@ export function Header() {
 
          <h1><span className={styles.color1}>to</span><span className={styles.color2}>do</span></h1>
       </header>
-   )
+   );
 }
