@@ -81,6 +81,9 @@ export function TasksList() {
       setTasks(newTasks);
    }
 
+   //Contar tarefas completas
+   const tasksCompleted = tasks.filter((task) => task.isIncomplete == false).length;
+
    return (
       <>
          <div className={stylesInput.taskInput}>
@@ -102,8 +105,8 @@ export function TasksList() {
       
          <div className={styles.tasksList}>
             <div className={styles.infosContainer}>
-               <p className={styles.createdTasks}>Tarefas criadas <span>0</span></p>
-               <p className={styles.completedTasks}>Concluídas <span>0</span></p>
+               <p className={styles.createdTasks}>Tarefas criadas <span>{tasks.length}</span></p>
+               <p className={styles.completedTasks}>Concluídas <span>{tasksCompleted + ' de ' + tasks.length}</span></p>
             </div>
             <div className={styles.tasksContainer}>
                {/* <img src={clipboard} alt="" />
